@@ -2,18 +2,7 @@ const toggleButton = document.querySelector('.theme-toggle');
 const themeLabel = document.getElementById('theme-label');
 const themeIcon = document.querySelector('.theme-icon');
 
-function getPreferredTheme() {
-  const stored = localStorage.getItem('theme');
-  if (stored) {
-    return stored;
-  }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  
+function updateThemeUI(theme) {
   if (theme === 'dark') {
     themeLabel.textContent = 'Ciemny';
     themeIcon.textContent = '🌙';
@@ -25,13 +14,20 @@ function setTheme(theme) {
   }
 }
 
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  updateThemeUI(theme);
+}
+
 toggleButton.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'light' ? 'dark' : 'light';
   setTheme(next);
 });
 
-setTheme(getPreferredTheme());
+const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+updateThemeUI(currentTheme);
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
   if (!localStorage.getItem('theme')) {
