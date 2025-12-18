@@ -11,7 +11,7 @@ function getPreferredTheme() {
 }
 
 function setTheme(theme) {
-  document.body.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
   
   if (theme === 'dark') {
@@ -26,7 +26,7 @@ function setTheme(theme) {
 }
 
 toggleButton.addEventListener('click', () => {
-  const current = document.body.getAttribute('data-theme');
+  const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'light' ? 'dark' : 'light';
   setTheme(next);
 });
