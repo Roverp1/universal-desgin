@@ -1,0 +1,320 @@
+/**
+ * Material Design 3 Design Tokens
+ */
+
+/* ========================================
+   COLOR SYSTEM
+   ======================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Light Theme Colors */
+[data-theme="light"] {
+  --md-sys-color-primary: rgb(0 104 116);
+  --md-sys-color-surface-tint: rgb(0 104 116);
+  --md-sys-color-on-primary: rgb(255 255 255);
+  --md-sys-color-primary-container: rgb(158 239 253);
+  --md-sys-color-on-primary-container: rgb(0 79 88);
+  --md-sys-color-secondary: rgb(74 98 103);
+  --md-sys-color-on-secondary: rgb(255 255 255);
+  --md-sys-color-secondary-container: rgb(205 231 236);
+  --md-sys-color-on-secondary-container: rgb(51 75 79);
+  --md-sys-color-tertiary: rgb(82 94 125);
+  --md-sys-color-on-tertiary: rgb(255 255 255);
+  --md-sys-color-tertiary-container: rgb(218 226 255);
+  --md-sys-color-on-tertiary-container: rgb(59 70 100);
+  --md-sys-color-error: rgb(186 26 26);
+  --md-sys-color-on-error: rgb(255 255 255);
+  --md-sys-color-error-container: rgb(255 218 214);
+  --md-sys-color-on-error-container: rgb(147 0 10);
+  --md-sys-color-background: rgb(245 250 251);
+  --md-sys-color-on-background: rgb(23 29 30);
+  --md-sys-color-surface: rgb(245 250 251);
+  --md-sys-color-on-surface: rgb(23 29 30);
+  --md-sys-color-surface-variant: rgb(219 228 230);
+  --md-sys-color-on-surface-variant: rgb(63 72 74);
+  --md-sys-color-outline: rgb(111 121 122);
+  --md-sys-color-outline-variant: rgb(191 200 202);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(43 49 51);
+  --md-sys-color-inverse-on-surface: rgb(236 242 243);
+  --md-sys-color-inverse-primary: rgb(130 211 224);
+  --md-sys-color-primary-fixed: rgb(158 239 253);
+  --md-sys-color-on-primary-fixed: rgb(0 31 36);
+  --md-sys-color-primary-fixed-dim: rgb(130 211 224);
+  --md-sys-color-on-primary-fixed-variant: rgb(0 79 88);
+  --md-sys-color-secondary-fixed: rgb(205 231 236);
+  --md-sys-color-on-secondary-fixed: rgb(5 31 35);
+  --md-sys-color-secondary-fixed-dim: rgb(177 203 208);
+  --md-sys-color-on-secondary-fixed-variant: rgb(51 75 79);
+  --md-sys-color-tertiary-fixed: rgb(218 226 255);
+  --md-sys-color-on-tertiary-fixed: rgb(14 27 55);
+  --md-sys-color-tertiary-fixed-dim: rgb(186 198 234);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(59 70 100);
+  --md-sys-color-surface-dim: rgb(213 219 220);
+  --md-sys-color-surface-bright: rgb(245 250 251);
+  --md-sys-color-surface-container-lowest: rgb(255 255 255);
+  --md-sys-color-surface-container-low: rgb(239 245 246);
+  --md-sys-color-surface-container: rgb(233 239 240);
+  --md-sys-color-surface-container-high: rgb(227 233 234);
+  --md-sys-color-surface-container-highest: rgb(222 227 229);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --md-sys-color-primary: rgb(130 211 224);
+  --md-sys-color-surface-tint: rgb(130 211 224);
+  --md-sys-color-on-primary: rgb(0 54 61);
+  --md-sys-color-primary-container: rgb(0 79 88);
+  --md-sys-color-on-primary-container: rgb(158 239 253);
+  --md-sys-color-secondary: rgb(177 203 208);
+  --md-sys-color-on-secondary: rgb(28 52 56);
+  --md-sys-color-secondary-container: rgb(51 75 79);
+  --md-sys-color-on-secondary-container: rgb(205 231 236);
+  --md-sys-color-tertiary: rgb(186 198 234);
+  --md-sys-color-on-tertiary: rgb(36 48 77);
+  --md-sys-color-tertiary-container: rgb(59 70 100);
+  --md-sys-color-on-tertiary-container: rgb(218 226 255);
+  --md-sys-color-error: rgb(255 180 171);
+  --md-sys-color-on-error: rgb(105 0 5);
+  --md-sys-color-error-container: rgb(147 0 10);
+  --md-sys-color-on-error-container: rgb(255 218 214);
+  --md-sys-color-background: rgb(14 20 21);
+  --md-sys-color-on-background: rgb(222 227 229);
+  --md-sys-color-surface: rgb(14 20 21);
+  --md-sys-color-on-surface: rgb(222 227 229);
+  --md-sys-color-surface-variant: rgb(63 72 74);
+  --md-sys-color-on-surface-variant: rgb(191 200 202);
+  --md-sys-color-outline: rgb(137 146 148);
+  --md-sys-color-outline-variant: rgb(63 72 74);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(222 227 229);
+  --md-sys-color-inverse-on-surface: rgb(43 49 51);
+  --md-sys-color-inverse-primary: rgb(0 104 116);
+  --md-sys-color-primary-fixed: rgb(158 239 253);
+  --md-sys-color-on-primary-fixed: rgb(0 31 36);
+  --md-sys-color-primary-fixed-dim: rgb(130 211 224);
+  --md-sys-color-on-primary-fixed-variant: rgb(0 79 88);
+  --md-sys-color-secondary-fixed: rgb(205 231 236);
+  --md-sys-color-on-secondary-fixed: rgb(5 31 35);
+  --md-sys-color-secondary-fixed-dim: rgb(177 203 208);
+  --md-sys-color-on-secondary-fixed-variant: rgb(51 75 79);
+  --md-sys-color-tertiary-fixed: rgb(218 226 255);
+  --md-sys-color-on-tertiary-fixed: rgb(14 27 55);
+  --md-sys-color-tertiary-fixed-dim: rgb(186 198 234);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(59 70 100);
+  --md-sys-color-surface-dim: rgb(14 20 21);
+  --md-sys-color-surface-bright: rgb(52 58 59);
+  --md-sys-color-surface-container-lowest: rgb(9 15 16);
+  --md-sys-color-surface-container-low: rgb(23 29 30);
+  --md-sys-color-surface-container: rgb(27 33 34);
+  --md-sys-color-surface-container-high: rgb(37 43 44);
+  --md-sys-color-surface-container-highest: rgb(48 54 55);
+}
+
+/* ========================================
+   TYPOGRAPHY SYSTEM
+   ======================================== */
+
+:root {
+  /* Typefaces */
+  --md-ref-typeface-brand: "Kode Mono", system-ui, -apple-system, sans-serif;
+  --md-ref-typeface-plain: "Noto Sans", system-ui, -apple-system, sans-serif;
+
+  /* Display Large */
+  --md-sys-typescale-display-large-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-large-size: 57px;
+  --md-sys-typescale-display-large-weight: 400;
+  --md-sys-typescale-display-large-line-height: 1.123;
+  --md-sys-typescale-display-large-tracking: -0.25px;
+
+  /* Display Medium */
+  --md-sys-typescale-display-medium-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-medium-size: 45px;
+  --md-sys-typescale-display-medium-weight: 400;
+  --md-sys-typescale-display-medium-line-height: 1.156;
+  --md-sys-typescale-display-medium-tracking: 0;
+
+  /* Display Small */
+  --md-sys-typescale-display-small-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-small-size: 36px;
+  --md-sys-typescale-display-small-weight: 400;
+  --md-sys-typescale-display-small-line-height: 1.22;
+  --md-sys-typescale-display-small-tracking: 0;
+
+  /* Headline Large */
+  --md-sys-typescale-headline-large-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-large-size: 32px;
+  --md-sys-typescale-headline-large-weight: 400;
+  --md-sys-typescale-headline-large-line-height: 1.25;
+  --md-sys-typescale-headline-large-tracking: 0;
+
+  /* Headline Medium */
+  --md-sys-typescale-headline-medium-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-medium-size: 28px;
+  --md-sys-typescale-headline-medium-weight: 400;
+  --md-sys-typescale-headline-medium-line-height: 1.286;
+  --md-sys-typescale-headline-medium-tracking: 0;
+
+  /* Headline Small */
+  --md-sys-typescale-headline-small-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-small-size: 24px;
+  --md-sys-typescale-headline-small-weight: 400;
+  --md-sys-typescale-headline-small-line-height: 1.333;
+  --md-sys-typescale-headline-small-tracking: 0;
+
+  /* Title Large */
+  --md-sys-typescale-title-large-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-large-size: 22px;
+  --md-sys-typescale-title-large-weight: 400;
+  --md-sys-typescale-title-large-line-height: 1.273;
+  --md-sys-typescale-title-large-tracking: 0;
+
+  /* Title Medium */
+  --md-sys-typescale-title-medium-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-medium-size: 16px;
+  --md-sys-typescale-title-medium-weight: 500;
+  --md-sys-typescale-title-medium-line-height: 1.5;
+  --md-sys-typescale-title-medium-tracking: 0.15px;
+
+  /* Title Small */
+  --md-sys-typescale-title-small-font: var(--md-ref-typeface-brand);
+  --md-sys-typescale-title-small-size: 14px;
+  --md-sys-typescale-title-small-weight: 500;
+  --md-sys-typescale-title-small-line-height: 1.429;
+  --md-sys-typescale-title-small-tracking: 0.1px;
+
+  /* Body Large */
+  --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-large-size: 16px;
+  --md-sys-typescale-body-large-weight: 400;
+  --md-sys-typescale-body-large-line-height: 1.5;
+  --md-sys-typescale-body-large-tracking: 0.5px;
+
+  /* Body Medium */
+  --md-sys-typescale-body-medium-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-medium-size: 14px;
+  --md-sys-typescale-body-medium-weight: 400;
+  --md-sys-typescale-body-medium-line-height: 1.25;
+  --md-sys-typescale-body-medium-tracking: 0.25px;
+
+  /* Body Small */
+  --md-sys-typescale-body-small-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-small-size: 12px;
+  --md-sys-typescale-body-small-weight: 400;
+  --md-sys-typescale-body-small-line-height: 1.333;
+  --md-sys-typescale-body-small-tracking: 0.4px;
+
+  /* Label Large */
+  --md-sys-typescale-label-large-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-large-size: 14px;
+  --md-sys-typescale-label-large-weight: 500;
+  --md-sys-typescale-label-large-line-height: 1.429;
+  --md-sys-typescale-label-large-tracking: 0.1px;
+
+  /* Label Medium */
+  --md-sys-typescale-label-medium-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-medium-size: 12px;
+  --md-sys-typescale-label-medium-weight: 500;
+  --md-sys-typescale-label-medium-line-height: 1.333;
+  --md-sys-typescale-label-medium-tracking: 0.5px;
+
+  /* Label Small */
+  --md-sys-typescale-label-small-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-small-size: 11px;
+  --md-sys-typescale-label-small-weight: 500;
+  --md-sys-typescale-label-small-line-height: 1.455;
+  --md-sys-typescale-label-small-tracking: 0.5px;
+}
+
+/* ========================================
+   SPACING SYSTEM (4px base)
+   ======================================== */
+
+:root {
+  --md-sys-spacing-1: 4px;
+  --md-sys-spacing-2: 8px;
+  --md-sys-spacing-3: 12px;
+  --md-sys-spacing-4: 16px;
+  --md-sys-spacing-5: 20px;
+  --md-sys-spacing-6: 24px;
+  --md-sys-spacing-8: 32px;
+  --md-sys-spacing-10: 40px;
+  --md-sys-spacing-12: 48px;
+  --md-sys-spacing-16: 64px;
+  --md-sys-spacing-20: 80px;
+  --md-sys-spacing-24: 96px;
+  --md-sys-spacing-32: 128px;
+  --md-sys-spacing-40: 160px;
+  --md-sys-spacing-50: 200px;
+  --md-sys-spacing-60: 240px;
+  --md-sys-spacing-70: 280px;
+}
+
+/* ========================================
+   ELEVATION SYSTEM (Shadows)
+   ======================================== */
+
+:root {
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1:
+    0px 1px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 2px 1px rgba(0, 0, 0, 0.24);
+  --md-sys-elevation-2:
+    0px 3px 6px 1px rgba(0, 0, 0, 0.12), 0px 1px 4px 1px rgba(0, 0, 0, 0.24);
+  --md-sys-elevation-3:
+    0px 5px 8px 2px rgba(0, 0, 0, 0.12), 0px 2px 6px 2px rgba(0, 0, 0, 0.24);
+  --md-sys-elevation-4:
+    0px 7px 10px 3px rgba(0, 0, 0, 0.12), 0px 3px 8px 3px rgba(0, 0, 0, 0.24);
+  --md-sys-elevation-5:
+    0px 9px 12px 4px rgba(0, 0, 0, 0.12), 0px 4px 10px 4px rgba(0, 0, 0, 0.24);
+}
+
+/* ========================================
+   SHAPE SYSTEM (Border Radius)
+   ======================================== */
+
+:root {
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-large-increased: 20px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-extra-large-increased: 32px;
+  --md-sys-shape-corner-extra-extra-large: 48px;
+}
+
+/* ========================================
+   MOTION SYSTEM (Transitions)
+   ======================================== */
+
+:root {
+  /* Duration */
+  --md-sys-motion-duration-short-1: 50ms;
+  --md-sys-motion-duration-short-2: 100ms;
+  --md-sys-motion-duration-short-3: 150ms;
+  --md-sys-motion-duration-short-4: 200ms;
+  --md-sys-motion-duration-medium-1: 250ms;
+  --md-sys-motion-duration-medium-2: 300ms;
+  --md-sys-motion-duration-medium-3: 350ms;
+  --md-sys-motion-duration-medium-4: 400ms;
+  --md-sys-motion-duration-long-1: 450ms;
+  --md-sys-motion-duration-long-2: 500ms;
+  --md-sys-motion-duration-long-3: 550ms;
+  --md-sys-motion-duration-long-4: 600ms;
+
+  /* Easing */
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
+  --md-sys-motion-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --md-sys-motion-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --md-sys-motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+}

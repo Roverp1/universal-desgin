@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prezentacja Yaroslav Zubakha - informacje o mnie, moich projektach i celach">
+  <meta name="author" content="Yaroslav Zubakha">
+  <title>Yaroslav Zubakha - O mnie</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+  <a href="#main" class="skip-link">Przejdź do treści głównej</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="index.html" class="site-title">Yaroslav Zubakha</a>
+      <button type="button" class="theme-toggle" aria-label="Przełącz motyw jasny/ciemny" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">☀️</span>
+        <span id="theme-label">Jasny</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="main-content" role="main">
+    <section class="hero">
+      <div class="hero-profile">
+        <img 
+          src="assets/profile-photo.jpg" 
+          alt="Zdjęcie profilowe Yaroslav Zubakha"
+          class="profile-image"
+          onerror="this.style.display='none'"
+        >
+        <div class="profile-info">
+          <h1>Yaroslav Zubakha</h1>
+          <p>Web Developer | Student</p>
+        </div>
+      </div>
+
+      <nav class="nav-menu" aria-label="Główna nawigacja">
+        <h2>Treść</h2>
+        <ul class="nav-grid" role="list">
+          <li>
+            <a href="pages/co-robie.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona pierwsza">01</span>
+              <h3>Co właściwie robię</h3>
+            </a>
+          </li>
+          <li>
+            <a href="pages/co-chce-robic.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona druga">02</span>
+              <h3>Co chcę robić</h3>
+            </a>
+          </li>
+          <li>
+            <a href="pages/rzeczywistosc.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona trzecia">03</span>
+              <h3>Rzeczywistość</h3>
+            </a>
+          </li>
+          <li>
+            <a href="pages/trening.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona czwarta">04</span>
+              <h3>Trening</h3>
+            </a>
+          </li>
+          <li>
+            <a href="pages/teraz.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona piąta">05</span>
+              <h3>Teraz</h3>
+            </a>
+          </li>
+          <li>
+            <a href="pages/co-mna-kieruje.html" class="nav-card">
+              <span class="nav-card-number" aria-label="Strona szósta">06</span>
+              <h3>Co mną kieruje</h3>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Bardzo ważne informacje o mnie</p>
+    <p>&copy; 2025 Yaroslav Zubakha</p>
+  </footer>
+
+  <script src="scripts/theme-toggle.js"></script>
+</body>
+</html>
