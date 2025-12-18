@@ -1,225 +1,237 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa witryny | Yaroslav Zubakha</title>
-  <script>
-    (function() {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = stored || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: var(--md-sys-typescale-body-large-font);
-      background-color: var(--md-sys-color-background);
-      color: var(--md-sys-color-on-background);
-      margin: 0;
-      padding: var(--md-sys-spacing-8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    h1 {
-      font-family: var(--md-sys-typescale-headline-large-font);
-      font-size: var(--md-sys-typescale-headline-large-size);
-      margin-bottom: var(--md-sys-spacing-8);
-      color: var(--md-sys-color-primary);
-    }
-
-    .sitemap-container {
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    .level-1 {
-      background-color: var(--md-sys-color-primary-container);
-      color: var(--md-sys-color-on-primary-container);
-      padding: var(--md-sys-spacing-6);
-      border-radius: var(--md-sys-shape-corner-extra-large);
-      text-align: center;
-      margin-bottom: var(--md-sys-spacing-8);
-      box-shadow: var(--md-sys-elevation-2);
-    }
-
-    .level-1 h2 {
-      font-size: var(--md-sys-typescale-title-large-size);
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .connector {
-      width: 4px;
-      height: 60px;
-      background: linear-gradient(
-        to bottom,
-        var(--md-sys-color-primary),
-        var(--md-sys-color-secondary)
-      );
-      margin: 0 auto;
-    }
-
-    .level-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--md-sys-spacing-4);
-      position: relative;
-    }
-
-    .page-card {
-      background-color: var(--md-sys-color-surface-container);
-      padding: var(--md-sys-spacing-4);
-      border-radius: var(--md-sys-shape-corner-large);
-      box-shadow: var(--md-sys-elevation-1);
-      text-align: center;
-      border: 2px solid var(--md-sys-color-outline-variant);
-    }
-
-    .page-card h3 {
-      font-size: var(--md-sys-typescale-title-medium-size);
-      margin: 0 0 var(--md-sys-spacing-2) 0;
-      color: var(--md-sys-color-on-surface);
-      font-weight: 500;
-    }
-
-    .page-number {
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background-color: var(--md-sys-color-secondary);
-      color: var(--md-sys-color-on-secondary);
-      border-radius: 50%;
-      line-height: 32px;
-      font-weight: 500;
-      margin-bottom: var(--md-sys-spacing-3);
-    }
-
-    .page-url {
-      font-size: var(--md-sys-typescale-body-small-size);
-      color: var(--md-sys-color-on-surface-variant);
-      word-break: break-all;
-      margin-top: var(--md-sys-spacing-2);
-      font-family: monospace;
-    }
-
-    .legend {
-      margin-top: var(--md-sys-spacing-12);
-      padding: var(--md-sys-spacing-6);
-      background-color: var(--md-sys-color-surface-container-low);
-      border-radius: var(--md-sys-shape-corner-large);
-      max-width: 600px;
-    }
-
-    .legend h3 {
-      font-size: var(--md-sys-typescale-title-medium-size);
-      margin-bottom: var(--md-sys-spacing-4);
-      color: var(--md-sys-color-on-surface);
-    }
-
-    .legend ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .legend li {
-      margin-bottom: var(--md-sys-spacing-2);
-      font-size: var(--md-sys-typescale-body-medium-size);
-    }
-
-    .back-link {
-      margin-top: var(--md-sys-spacing-8);
-      display: inline-block;
-      padding: var(--md-sys-spacing-3) var(--md-sys-spacing-6);
-      background-color: var(--md-sys-color-primary);
-      color: var(--md-sys-color-on-primary);
-      text-decoration: none;
-      border-radius: var(--md-sys-shape-corner-large);
-      font-weight: 500;
-    }
-
-    @media print {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa witryny | Yaroslav Zubakha</title>
+    <script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
       body {
-        background: white;
+        font-family: var(--md-sys-typescale-body-large-font);
+        background-color: var(--md-sys-color-background);
+        color: var(--md-sys-color-on-background);
+        margin: 0;
+        padding: var(--md-sys-spacing-8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
       }
+
+      h1 {
+        font-family: var(--md-sys-typescale-headline-large-font);
+        font-size: var(--md-sys-typescale-headline-large-size);
+        margin-bottom: var(--md-sys-spacing-8);
+        color: var(--md-sys-color-primary);
+      }
+
+      .sitemap-container {
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      .level-1 {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        padding: var(--md-sys-spacing-6);
+        border-radius: var(--md-sys-shape-corner-extra-large);
+        text-align: center;
+        margin-bottom: var(--md-sys-spacing-8);
+        box-shadow: var(--md-sys-elevation-2);
+      }
+
+      .level-1 h2 {
+        font-size: var(--md-sys-typescale-title-large-size);
+        margin: 0;
+        font-weight: 500;
+      }
+
+      .connector {
+        width: 4px;
+        height: 60px;
+        background: linear-gradient(
+          to bottom,
+          var(--md-sys-color-primary),
+          var(--md-sys-color-secondary)
+        );
+        margin: 0 auto;
+      }
+
+      .level-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--md-sys-spacing-4);
+        position: relative;
+      }
+
+      .page-card {
+        background-color: var(--md-sys-color-surface-container);
+        padding: var(--md-sys-spacing-4);
+        border-radius: var(--md-sys-shape-corner-large);
+        box-shadow: var(--md-sys-elevation-1);
+        text-align: center;
+        border: 2px solid var(--md-sys-color-outline-variant);
+      }
+
+      .page-card h3 {
+        font-size: var(--md-sys-typescale-title-medium-size);
+        margin: 0 0 var(--md-sys-spacing-2) 0;
+        color: var(--md-sys-color-on-surface);
+        font-weight: 500;
+      }
+
+      .page-number {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: var(--md-sys-color-secondary);
+        color: var(--md-sys-color-on-secondary);
+        border-radius: 50%;
+        line-height: 32px;
+        font-weight: 500;
+        margin-bottom: var(--md-sys-spacing-3);
+      }
+
+      .page-url {
+        font-size: var(--md-sys-typescale-body-small-size);
+        color: var(--md-sys-color-on-surface-variant);
+        word-break: break-all;
+        margin-top: var(--md-sys-spacing-2);
+        font-family: monospace;
+      }
+
+      .legend {
+        margin-top: var(--md-sys-spacing-12);
+        padding: var(--md-sys-spacing-6);
+        background-color: var(--md-sys-color-surface-container-low);
+        border-radius: var(--md-sys-shape-corner-large);
+      }
+
+      .legend h3 {
+        font-size: var(--md-sys-typescale-title-medium-size);
+        margin-bottom: var(--md-sys-spacing-4);
+        color: var(--md-sys-color-on-surface);
+      }
+
+      .legend ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .legend li {
+        margin-bottom: var(--md-sys-spacing-2);
+        font-size: var(--md-sys-typescale-body-medium-size);
+      }
+
       .back-link {
-        display: none;
+        margin-top: var(--md-sys-spacing-8);
+        display: inline-block;
+        padding: var(--md-sys-spacing-3) var(--md-sys-spacing-6);
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+        text-decoration: none;
+        border-radius: var(--md-sys-shape-corner-large);
+        font-weight: 500;
       }
-    }
-  </style>
-</head>
-<body>
-  <h1>Schemat Blokowy Witryny</h1>
 
-  <div class="sitemap-container">
-    <div class="level-1">
-      <h2>index.html</h2>
-      <p>Strona Główna</p>
-      <small>Yaroslav Zubakha - O mnie</small>
+      @media print {
+        body {
+          background: white;
+        }
+        .back-link {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Schemat Blokowy Witryny</h1>
+
+    <div class="sitemap-container">
+      <div class="level-1">
+        <h2>index.html</h2>
+        <p>Strona Główna</p>
+        <small>Yaroslav Zubakha - O mnie</small>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="level-2">
+        <div class="page-card">
+          <span class="page-number">01</span>
+          <h3>Co właściwie robię</h3>
+          <p class="page-url">pages/co-robie.html</p>
+        </div>
+
+        <div class="page-card">
+          <span class="page-number">02</span>
+          <h3>Co chcę robić</h3>
+          <p class="page-url">pages/co-chce-robic.html</p>
+        </div>
+
+        <div class="page-card">
+          <span class="page-number">03</span>
+          <h3>Rzeczywistość</h3>
+          <p class="page-url">pages/rzeczywistosc.html</p>
+        </div>
+
+        <div class="page-card">
+          <span class="page-number">04</span>
+          <h3>Trening</h3>
+          <p class="page-url">pages/trening.html</p>
+        </div>
+
+        <div class="page-card">
+          <span class="page-number">05</span>
+          <h3>Teraz</h3>
+          <p class="page-url">pages/teraz.html</p>
+        </div>
+
+        <div class="page-card">
+          <span class="page-number">06</span>
+          <h3>Co mną kieruje</h3>
+          <p class="page-url">pages/co-mna-kieruje.html</p>
+        </div>
+      </div>
+
+      <div class="legend">
+        <h3>Struktura witryny</h3>
+        <ul>
+          <li>
+            <strong>Poziom 1:</strong> Strona tytułowa z menu nawigacyjnym
+          </li>
+          <li><strong>Poziom 2:</strong> 6 stron z treścią prezentacji</li>
+          <li>
+            <strong>Nawigacja:</strong> Interaktywne menu na stronie głównej
+          </li>
+          <li>
+            <strong>Powrót:</strong> Każda strona zawiera przycisk powrotu
+          </li>
+          <li>
+            <strong>Dostępność:</strong> WCAG 2.1 AA/AAA, Material Design 3
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="connector"></div>
+    <a href="index.html" class="back-link">Przejdź do witryny</a>
 
-    <div class="level-2">
-      <div class="page-card">
-        <span class="page-number">01</span>
-        <h3>Co właściwie robię</h3>
-        <p class="page-url">pages/co-robie.html</p>
-      </div>
-
-      <div class="page-card">
-        <span class="page-number">02</span>
-        <h3>Co chcę robić</h3>
-        <p class="page-url">pages/co-chce-robic.html</p>
-      </div>
-
-      <div class="page-card">
-        <span class="page-number">03</span>
-        <h3>Rzeczywistość</h3>
-        <p class="page-url">pages/rzeczywistosc.html</p>
-      </div>
-
-      <div class="page-card">
-        <span class="page-number">04</span>
-        <h3>Trening</h3>
-        <p class="page-url">pages/trening.html</p>
-      </div>
-
-      <div class="page-card">
-        <span class="page-number">05</span>
-        <h3>Teraz</h3>
-        <p class="page-url">pages/teraz.html</p>
-      </div>
-
-      <div class="page-card">
-        <span class="page-number">06</span>
-        <h3>Co mną kieruje</h3>
-        <p class="page-url">pages/co-mna-kieruje.html</p>
-      </div>
-    </div>
-
-    <div class="legend">
-      <h3>Struktura witryny</h3>
-      <ul>
-        <li><strong>Poziom 1:</strong> Strona tytułowa z menu nawigacyjnym</li>
-        <li><strong>Poziom 2:</strong> 6 stron z treścią prezentacji</li>
-        <li><strong>Nawigacja:</strong> Interaktywne menu na stronie głównej</li>
-        <li><strong>Powrót:</strong> Każda strona zawiera przycisk powrotu</li>
-        <li><strong>Dostępność:</strong> WCAG 2.1 AA/AAA, Material Design 3</li>
-      </ul>
-    </div>
-  </div>
-
-  <a href="index.html" class="back-link">Przejdź do witryny</a>
-
-  <script src="scripts/theme-toggle.js"></script>
-</body>
+    <script src="scripts/theme-toggle.js"></script>
+  </body>
 </html>
